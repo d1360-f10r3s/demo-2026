@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('hola-mundo', function () {
     return view('hola');
 });
+
+Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'contacto']);
+
+Route::post('recibe-formulario', [App\Http\Controllers\ContactoController::class, 'recibeFormulario']);
