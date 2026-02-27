@@ -29,7 +29,7 @@ class ContactoController extends Controller
             'mensaje' => 'required|min:10|max:255', 
         ]);
 
-        dd($request->all());
+        //dd($request->all());
 
 
 
