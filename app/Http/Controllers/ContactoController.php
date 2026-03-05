@@ -9,7 +9,7 @@ class ContactoController extends Controller
 {
     public function contacto()
     {
-        return view('contacto');
+        return view('formulario-contacto');
     }
 
     public function recibeFormulario(Request $request)
@@ -21,7 +21,6 @@ class ContactoController extends Controller
             'mensaje' => ['required', 'min:10'],
         ]);
 
-        dd($request->all());
         // dd($request->all());
         
         // Insertar a DB
@@ -35,7 +34,7 @@ class ContactoController extends Controller
         return redirect()->back();
     }
 
-        return 'Formulario Recibido';
+        //return 'Formulario Recibido';
     public function listaContactos()
     {
         $contactos = Contacto::all();
