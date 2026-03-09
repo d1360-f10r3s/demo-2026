@@ -1,46 +1,63 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ContactoController extends Controller
 {
-    public function contacto()
+
+    public function index()
     {
-        return view('formulario-contacto');
+        $contactos=Contacto::all();
+
+        return view('contactos.index')->with('contactos', $contactos);
     }
 
-    public function recibeFormulario(Request $request)
+    public function create()
     {
-        // Validar datos
+        return view('contactos.create');
+    }
+
+    public function store(Request $request)
+    {
         $request->validate([
             'nombre' => 'required|min:5',
             'correo' => 'required|email',
-            'mensaje' => ['required', 'min:10'],
+            'mensaje' => 'required|min:10',
         ]);
 
-        // dd($request->all());
-        
-        // Insertar a DB
         $contacto = new Contacto();
         $contacto->nombre = $request->nombre;
         $contacto->correo = $request->correo;
         $contacto->mensaje = $request->mensaje;
         $contacto->save();
 
-        // Redirigir a otra página
-        return redirect()->back();
+        return redirect()->route('contactos.index');
     }
 
-        //return 'Formulario Recibido';
-    public function listaContactos()
+    public function show(Contacto $contacto)
     {
-        $contactos = Contacto::all();
-        
-        return view('lista-contactos')->with(['contactos' => $contactos]);
+        return view('contactos.show')->with('contacto', $contacto);
+    }
+
+    public function edit(Contacto $contacto)
+    {
+        return view('contactos.edit')->with('contacto', $contacto);
+    }
+
+    public function update(Request $request, Contacto $contacto)
+    {
+        $contacto->update($request->all());
+
+        return redirect()->route('contactos.index');
+    }
+
+    public function destroy(Contacto $contacto)
+    {
+        $contacto->delete();
+
+        return redirect()->route('contactos.index');
     }
 }
-
-
