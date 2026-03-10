@@ -23,7 +23,7 @@
     <ul>
         @foreach ($contactos as $contacto)
             <li>
-                {{ $contacto->nombre }} - {{ $contacto->correo }} <br> <span class="text-white"> Mensaje:</span> <span class="text-sky-400">{{ $contacto->mensaje }}</span>
+                {{ $contacto->nombre }} - {{ $contacto->correo }} <br> <span class="text-white"> Mensaje:</span> <span class="whitespace-pre-wrap break-words text-sky-400">{{ $contacto->mensaje }}</span>
                 <br><br>
             </li>
         @endforeach

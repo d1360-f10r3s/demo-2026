@@ -21,7 +21,7 @@
     <p class="text-white"><span class="text-yellow-400">ID: </span> {{ $contacto->id }}</p>
     <p class="text-white"><span class="text-yellow-400">Nombre: </span> {{ $contacto->nombre }}</p>
     <p class="text-white"><span class="text-yellow-400">Correo: </span> {{ $contacto->correo }}</p>
-    <p class="text-white"><span class="text-yellow-400">Mensaje: </span> {{ $contacto->mensaje }}</p>
+    <p class="text-white whitespace-pre-wrap break-words"><span class="text-yellow-400">Mensaje: </span> {{ $contacto->mensaje }}</p>
 
     </div>
 
