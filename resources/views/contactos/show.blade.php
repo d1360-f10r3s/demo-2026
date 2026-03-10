@@ -2,7 +2,7 @@
 
 <p>ID: {{ $contacto->id }}</p>
 <p>Nombre: {{ $contacto->nombre }}</p>
-<p>Email: {{ $contacto->email }}</p>
+<p> Correo: {{ $contacto->correo }}</p>
 <p>Mensaje: {{ $contacto->mensaje }}</p>
 
 <a href="{{ route('contactos.index') }}">Volver</a>

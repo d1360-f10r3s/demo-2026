@@ -6,12 +6,12 @@
 <label>Nombre</label>
 <input type="text" name="nombre">
 
-<br>
+<br><br>
 
 <label>Correo</label>
 <input type="email" name="correo">
 
-<br>
+<br><br>
 
 <label>Mensaje</label>
 <textarea name="mensaje"></textarea>

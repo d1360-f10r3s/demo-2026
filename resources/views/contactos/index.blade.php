@@ -1,20 +1,21 @@
-<h1>Lista de contactos</h1>
+<!-- Esto es como el lista-contactos.php anterior -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de contactos</h1>
 
-<a href="{{ route('contactos.create') }}">Crear contacto</a>
-
-<table border="1">
-<tr>
-    <th>Nombre</th>
-    <th>Correo</th>
-    <th>Mensaje</th>
-</tr>
-
-@foreach($contactos as $contacto)
-<tr>
-    <td>{{ $contacto->nombre }}</td>
-    <td>{{ $contacto->correo }}</td>
-    <td>{{ $contacto->mensaje }}</td>
-</tr>
-@endforeach
-
-</table>
+    <ul>
+        @foreach ($contactos as $contacto)
+            <li>
+                {{ $contacto->nombre }} - {{ $contacto->correo }} - {{ $contacto->mensaje }}
+            </li>
+        @endforeach
+    </ul>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <br>
 
 <label>Email</label>
-<input type="email" name="email" value="{{ $contacto->email }}">
+<input type="email" name="correo" value="{{ $contacto->correo }}">
 
 <br>
 
